@@ -25,6 +25,7 @@ By [nikhil_mitt](https://twitter.com/nikhil_mitt)
 - Code Execution using DNS TXT queries
 - Download and Execute PowerShell Script
 - Execute ShellCode
+- Reverse TCP Shell
 
 ######Backdoor
 - Sethc and Utilman backdoor
@@ -33,6 +34,7 @@ By [nikhil_mitt](https://twitter.com/nikhil_mitt)
 - DNS TXT Backdoor
 - Wireless Rogue AP
 - Tracking Target Connectivity
+- Gupt Backdoor
 
 ######Escalate
 - Remove Update
@@ -45,6 +47,13 @@ By [nikhil_mitt](https://twitter.com/nikhil_mitt)
 - Add a user and Enable RDP
 - Add a user and Enable Telnet
 -  Add a user and Enable Powershell Remoting
+
+######Drop Files
+- Drop a MS Word File
+- Drop a MS Excel File
+- Drop a CHM (Compiled HTML Help) file
+- Drop a Shortcut (.LNK) file
+- Drop a JAR file
 
 ######Misc
 - Browse and Accept Java Signed Applet

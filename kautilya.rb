@@ -2,7 +2,7 @@
 require "rubygems"
 require 'bundler/setup'
 if ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil)
-  require 'Win32/Console/ANSI'
+  #require 'Win32/Console/ANSI'
 end
 require "colored"
 require "./lib/src/methods"
@@ -18,7 +18,7 @@ fonts = ['3-d', 'banner3', 'colossal', 'epic', 'isometric1', 'isometric2', 'isom
 a = Artii::Base.new :font => fonts.sample
 puts"#{a.asciify('Kautilya')}".blue
 
-puts"\nVersion 0.5.0"
+puts"\nVersion 0.5.6"
 print"|..| ".green
 print"Written By: ".yellow
 print"Nikhil \"SamratAshok\" Mittal            ".cyan
@@ -29,15 +29,15 @@ print"@nikhil_mitt                              ".cyan
 print"|..|\n".green
 print"|..| ".green
 print"Bugs & Feedback: ".yellow
-print"nikhil_uitrgpv@yahoo.co.in        ".cyan
+print"nikhil.uitrgpv@gmail.com        ".cyan
 print"|..|\n".green
 print"|..| ".green
 print"Code: ".yellow
-print"http://code.google.com/p/kautilya/           ".cyan
+print"https://github.com/samratashok/Kautilya      ".cyan
 print"|..|\n".green
 print"|..| ".green
 print"Blog: ".yellow
-print"http://labofapenetrationtester.com/ ".cyan
+print"http://labofapenetrationtester.com/          ".cyan
 print"|..|\n".green
 puts"\nKautilya is a toolkit to ease usage of Human Interface Devices in Pen Tests."
 puts"Tested on Teensy++ and Teensy 3.0 from pjrc.com."
@@ -58,7 +58,8 @@ puts" 2. Execute"
 puts" 3. Backdoor"
 puts" 4. Escalate"
 puts" 5. Manage"
-puts" 6. Misc"
+puts" 6. Drop Files"
+puts" 7. Misc"
 puts"\n 0. Go back to Main Menu"
 category = input("")
 case category
@@ -111,6 +112,11 @@ when "2"
   puts" 4. Code Execution using DNS TXT queries"
   puts" 5. Download and Execute PowerShell Script"
   puts" 6. Execute ShellCode"
+  puts" 7. Reverse TCP Shell"
+  puts" 8. Reverse UDP Shell"
+  puts" 9. Reverse ICMP Shell"
+  puts" 10. Reverse HTTPS Shell"
+  puts" 11. Reverse HTTP Shell"
   puts"\n 0. Go back to Main Menu"
   option = input("")
   case option
@@ -121,11 +127,21 @@ when "2"
   when "3"
     powershell_codeexec()
   when "4"
-    dns_code_exec()
+    dns_txt_codeexec()
   when "5"
     download_execute_ps()
   when "6"
     invoke_shellcode()
+  when "7"
+    reverse_tcp()
+  when "8"
+    reverse_udp()
+  when "9"
+    reverse_icmp()
+  when "10"
+    reverse_https()
+  when "11"
+    reverse_http()
   when "0"
   end
 when "3"
@@ -135,6 +151,7 @@ when "3"
   puts" 4. DNS TXT Backdoor"
   puts" 5. Wireless Rogue AP"
   puts" 6. Tracking Target Connectivity"
+  puts" 7. Gupt Backdoor"
   puts"\n 0. Go back to Main Menu"
   option = input("")
   case option
@@ -150,6 +167,8 @@ when "3"
     rogue_ap()
   when "6"
     ncsi()
+  when "7"
+    gupt()
   when "0"
   end
 when"4"
@@ -188,7 +207,30 @@ when "5"
     enable_psremoting()
   when "0"
   end
+
 when "6"
+  puts" 1. Drop a MS Word File"
+  puts" 2. Drop a MS Excel File"
+  puts" 3. Drop a CHM (Compiled HTML Help) file"
+  puts" 4. Drop a Shortcut (.LNK) file"
+  puts" 5. Drop a JAR file"
+  puts"\n 0. Go back to Main Menu"
+  option = input("")
+  case option
+  when "1"
+    drop_word()
+  when "2"
+    drop_excel()
+  when "3"
+    drop_chm()
+  when "4"
+    drop_shortcut()
+  when "5"
+    drop_jar()
+  when "0"
+  end
+
+when "7"
   puts" 1. Browse and Accept Java Signed Applet"
   puts" 2. Speak on Target"
   puts"\n 0. Go back to Main Menu"
